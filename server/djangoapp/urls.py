@@ -19,8 +19,9 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += [path('logout', views.logout_request, name='logout')]
-
-urlpatterns += [path('register', views.registration, name='register')]
-
-urlpatterns += [path('login', views.login_user, name='login'), path('logout', views.logout_request, name='logout'), path('register', views.registration, name='register')]
+urlpatterns += [
+    path('login', views.login_user, name='login'),
+    path('logout', views.logout_request, name='logout'),
+    path('register', views.registration, name='register'),
+    path('get_cars', views.get_cars, name='getcars'),
+]
